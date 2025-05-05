@@ -45,7 +45,7 @@ def calculate_wounds(data):
     return round(total_damage, 2)
 
 # UI
-query = st.query_params()
+query = st.query_params
 expr = query.get("q", [""])[0]
 
 st.title("Warhammer 40k Average Calculator")
