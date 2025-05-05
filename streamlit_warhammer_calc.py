@@ -45,10 +45,10 @@ def calculate_wounds(data):
     return round(total_damage, 2)
 
 # UI
-query = st.experimental_get_query_params()
+query = st.st.query_params()
 expr = query.get("q", [""])[0]
 
-st.title("Warhammer 40k Shooting Calculator")
+st.title("Warhammer 40k Average Calculator")
 
 if expr:
     st.write(f"**Query:** `{expr}`")
@@ -57,6 +57,6 @@ if expr:
         result = calculate_wounds(data)
         st.write(f"**Estimated Damage:** `{result}`")
     else:
-        st.error("Invalid expression. Use format like: `20xBS3+/S4/-1/1 vs T5/3+`")
+        st.error("Invalid expression. Use format like: `20x BS3+/S4/-1/1 vs T5/3+`")
 else:
     st.write("Add `?q=...` to the URL to get started.")
